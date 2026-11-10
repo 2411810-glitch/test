@@ -1,0 +1,20 @@
+﻿QuanLyDichVuKhachSan
+
+
+winexe
+C#
+.cs
+F:\New folder\QuanLyDichVuKhachSan\QuanLyDichVuKhachSan_Code\obj\Debug\net10.0-windows\
+QuanLyDichVuKhachSan
+none
+false
+TRACE;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NET10_0_OR_GREATER;NETCOREAPP1_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+F:\New folder\QuanLyDichVuKhachSan\QuanLyDichVuKhachSan_Code\App.xaml
+291052336690
+
+631965354126
+220-911473520
+MainWindow.xaml;Styles\ModernStyles.xaml;Views\AccountManagementWindow.xaml;Views\AddEventSpaceDialogWindow.xaml;Views\AddLaundryPartnerDialogWindow.xaml;Views\AddLaundryServiceTypeDialogWindow.xaml;Views\AddVehicleDialogWindow.xaml;Views\CheckInDialogWindow.xaml;Views\CustomerListView.xaml;Views\EditEventSpaceDialogWindow.xaml;Views\EditFoodItemDialogWindow.xaml;Views\EditLaundryPartnerDialogWindow.xaml;Views\EditVehicleDialogWindow.xaml;Views\EventServiceView.xaml;Views\ExtendStayDialogWindow.xaml;Views\FoodServiceView.xaml;Views\InventoryManagementView.xaml;Views\InvoiceBillWindow.xaml;Views\LaundryServiceView.xaml;Views\LoginView.xaml;Views\ParkingServiceView.xaml;Views\RoomMapView.xaml;Views\SelectPartnerDialogWindow.xaml;Views\ServiceDetailDialogWindow.xaml;Views\ServicesConfigView.xaml;Views\StaffManagementView.xaml;Views\StatisticsView.xaml;Views\TransactionHistoryView.xaml;Views\VehicleServiceView.xaml;
+
+False
+

@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\New folder\\QuanLyDichVuKhachSan\\QuanLyDichVuKhachSan_Code\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{42D4E703-3E75-494A-B452-F621D7649D77}|QuanLyDichVuKhachSan.csproj|f:\\new folder\\quanlydichvukhachsan\\quanlydichvukhachsan_code\\views\\laundryserviceview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{42D4E703-3E75-494A-B452-F621D7649D77}|QuanLyDichVuKhachSan.csproj|solutionrelative:views\\laundryserviceview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LaundryServiceView.xaml",
+              "DocumentMoniker": "F:\\New folder\\QuanLyDichVuKhachSan\\QuanLyDichVuKhachSan_Code\\Views\\LaundryServiceView.xaml",
+              "RelativeDocumentMoniker": "Views\\LaundryServiceView.xaml",
+              "ToolTip": "F:\\New folder\\QuanLyDichVuKhachSan\\QuanLyDichVuKhachSan_Code\\Views\\LaundryServiceView.xaml",
+              "RelativeToolTip": "Views\\LaundryServiceView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-10T12:17:33.586Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

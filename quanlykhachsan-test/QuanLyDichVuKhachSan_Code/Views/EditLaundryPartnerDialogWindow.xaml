@@ -1,0 +1,139 @@
+<Window x:Class="QuanLyDichVuKhachSan.Views.EditLaundryPartnerDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:helpers="clr-namespace:QuanLyDichVuKhachSan.Helpers"
+        mc:Ignorable="d"
+        Title="Chỉnh Sửa Đối Tác Giặt Ủi - Dalat Hotel"
+        Width="640" SizeToContent="Height" MinHeight="470"
+        WindowStartupLocation="CenterScreen"
+        Background="#0F172A"
+        ResizeMode="NoResize"
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True"
+        TextOptions.TextFormattingMode="Display"
+        TextOptions.TextRenderingMode="ClearType"
+        TextOptions.TextHintingMode="Fixed">
+
+    <Grid Margin="16">
+        <Border Background="White" CornerRadius="14" Padding="24,20" BorderBrush="#CBD5E1" BorderThickness="1">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="4" Opacity="0.2" Color="#000000"/>
+            </Border.Effect>
+
+            <StackPanel>
+                <TextBlock Text="🧺 CHỈNH SỬA ĐỐI TÁC GIẶT ỦI LIÊN KẾT" FontSize="15" FontWeight="Bold" Foreground="#1E293B" Margin="0,0,0,16"/>
+
+                <!-- Mã đối tác & Tên đối tác -->
+                <Grid Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Mã Đối Tác:" FontSize="11" FontWeight="SemiBold" Foreground="#64748B" Margin="0,0,0,3"/>
+                        <TextBox x:Name="TxtCode" Style="{StaticResource ModernTextBox}" Height="36" IsReadOnly="True" Background="#F1F5F9" FontWeight="Bold" Foreground="#0284C7"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="Tên Tiệm / Đơn Vị Giặt Ủi (*):" FontSize="11" FontWeight="SemiBold" Foreground="#64748B" Margin="0,0,0,3"/>
+                        <TextBox x:Name="TxtName" Style="{StaticResource ModernTextBox}" Height="36"/>
+                    </StackPanel>
+                </Grid>
+
+                <TextBlock Text="Địa Chỉ Cơ Sở Giặt:" FontSize="11" FontWeight="SemiBold" Foreground="#64748B" Margin="0,0,0,3"/>
+                <TextBox x:Name="TxtAddress" Style="{StaticResource ModernTextBox}" Height="36" Margin="0,0,0,10"/>
+
+                <Grid Margin="0,0,0,12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Số Điện Thoại Liên Hệ (*):" FontSize="11" FontWeight="SemiBold" Foreground="#64748B" Margin="0,0,0,3"/>
+                        <TextBox x:Name="TxtPhoneNumber" helpers:InputHelper.ValidationMode="PhoneOnly" Style="{StaticResource ModernTextBox}" Height="36"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="Trạng Thái Hợp Tác:" FontSize="11" FontWeight="SemiBold" Foreground="#64748B" Margin="0,0,0,3"/>
+                        <ComboBox x:Name="CboStatus" Height="36">
+                            <ComboBoxItem Content="Đang hợp tác" IsSelected="True"/>
+                            <ComboBoxItem Content="Tạm ngừng liên kết"/>
+                        </ComboBox>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Bảng giá vốn đối tác báo -->
+                <Border Background="#F8FAFC" BorderBrush="#CBD5E1" BorderThickness="1" CornerRadius="8" Padding="12" Margin="0,0,0,16">
+                    <StackPanel>
+                        <TextBlock Text="📊 BẢNG GIÁ VỐN ĐỐI TÁC BÁO" FontSize="11.5" FontWeight="Bold" Foreground="#0284C7" Margin="0,0,0,8"/>
+
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="8"/>
+                                <ColumnDefinition Width="1.1*"/>
+                                <ColumnDefinition Width="8"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Loại hình dịch vụ giặt:" FontSize="10.5" FontWeight="SemiBold" Foreground="#475569" Margin="0,0,0,2"/>
+                                <ComboBox x:Name="CboServiceType" Height="34" DisplayMemberPath="ComboDisplayWithPrice"
+                                          Style="{StaticResource ModernComboBox}" SelectionChanged="CboServiceType_SelectionChanged"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="Giá vốn đối tác báo (đ/Kg):" FontSize="10.5" FontWeight="SemiBold" Foreground="#475569" Margin="0,0,0,2"/>
+                                <TextBox x:Name="TxtCostPrice" helpers:InputHelper.ValidationMode="DecimalOnly" Style="{StaticResource ModernTextBox}" Height="34"
+                                         TextChanged="TxtCostPrice_TextChanged" LostFocus="TxtCostPrice_LostFocus" PreviewKeyDown="TxtCostPrice_PreviewKeyDown"/>
+                            </StackPanel>
+
+                            <Button Grid.Column="4" Content="➕ Lưu giá" VerticalAlignment="Bottom" Height="34" Padding="12,0"
+                                    Style="{StaticResource PrimaryButton}" Background="#0284C7" FontWeight="Bold" FontSize="11.5"
+                                    Click="BtnAddServicePrice_Click"/>
+                        </Grid>
+
+                        <DataGrid x:Name="DgPartnerPrices" MaxHeight="155" AutoGenerateColumns="False" IsReadOnly="True"
+                                  CanUserAddRows="False" CanUserDeleteRows="False" HeadersVisibility="Column"
+                                  GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#E2E8F0" RowHeight="32"
+                                  Background="White" BorderBrush="#E2E8F0" BorderThickness="1"
+                                  SelectionMode="Single" SelectionChanged="DgPartnerPrices_SelectionChanged">
+                            <DataGrid.RowStyle>
+                                <Style TargetType="DataGridRow">
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                    <EventSetter Event="PreviewMouseRightButtonDown" Handler="DgPartnerPricesRow_PreviewMouseRightButtonDown"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Background" Value="#DBEAFE"/>
+                                            <Setter Property="Foreground" Value="#1E3A8A"/>
+                                            <Setter Property="FontWeight" Value="SemiBold"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.RowStyle>
+                            <DataGrid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="🗑️ Xóa dịch vụ này" Foreground="#DC2626" FontWeight="Bold" Click="MenuItem_DeleteServicePrice_Click"/>
+                                </ContextMenu>
+                            </DataGrid.ContextMenu>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Loại Hình Dịch Vụ" Binding="{Binding TenLoai}" Width="*"/>
+                                <DataGridTextColumn Header="Giá Bán KS" Binding="{Binding DonGiaBanKg, StringFormat='{}{0:N0} đ'}" Width="100"/>
+                                <DataGridTextColumn Header="Giá Vốn Tiệm" Binding="{Binding DonGiaVonKg, StringFormat='{}{0:N0} đ'}" Width="105" FontWeight="Bold"/>
+                                <DataGridTextColumn Header="Lợi Nhuận KS" Binding="{Binding ProfitDisplay}" Width="125" Foreground="#15803D" FontWeight="SemiBold"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Nút bấm Hủy (khôi phục dữ liệu ban đầu) và Xác nhận (Lưu thay đổi) -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="BtnCancel" Content="Hủy" Click="BtnCancel_Click" Height="36" Width="90" Margin="0,0,10,0" Style="{StaticResource OutlineButton}"/>
+                    <Button x:Name="BtnConfirm" Content="Xác nhận" Click="BtnSave_Click" Height="36" Width="120" Style="{StaticResource PrimaryButton}" Background="#16A34A"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
